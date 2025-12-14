@@ -1,0 +1,546 @@
+@charset "utf-8";
+
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+body {
+  font-family: "YuGothic";
+  font-size: 16px;
+  line-height: 1;
+  font-family:'Hiragino Sans、ヒラギノ角ゴシック';
+  font-family: 'Klee One', cursive;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+a.anchor{
+  display: block;
+  padding-top: 70px;
+  margin-top: -70px;
+}
+
+/*ここからheaderの記述*/
+
+img {
+  max-width: 100%;
+}
+
+.header-container {
+  width: 100%;
+  height: 90px;
+  background-color: rgba(31, 27, 25, 0.8);
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 50px;
+  padding-right: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 99;
+}
+
+.header-logo {
+  display: flex;
+  width: 170px;
+}
+
+.site-menu ul {
+  display: flex;
+}
+
+.site-menu ul li {
+  margin-left: 30px;
+  margin-right: 30px;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.site-menu ul li:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px 3px white;
+  transition: 0.3s;
+}
+
+/*ハンバーガーメニュー*/
+
+.menu-btn {
+  position: fixed;
+  right: 8px;
+  display: flex;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  z-index: 90;
+  display: none;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 25px;
+  border-radius: 3px;
+  background-color: #ffffff;
+  position: absolute;
+}
+.menu-btn span:before {
+  bottom: 8px;
+}
+.menu-btn span:after {
+  top: 8px;
+}
+s
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+#menu-btn-check {
+    display: none;
+}
+
+.menu-content ul {
+  padding: 70px 10px 0;
+}
+.menu-content ul li {
+  border-bottom: dashed 0.1px white;
+  list-style: none;
+  margin-left: 50px;
+  margin-right: 20px;
+}
+.menu-content ul li a {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  box-sizing: border-box;
+  color:#ffffff;
+  text-decoration: none;
+  padding: 20px 15px 10px 20px;
+  position: relative;
+}
+.menu-content ul li a::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-top: solid 0.5px #ffffff;
+  border-right: solid 0.5px #ffffff;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 11px;
+  top: 16px;
+}
+
+.menu-content {
+  width: 80%;
+  height: 100%;
+  position: fixed;
+  top: 90px;
+  left: 100%;/*leftの値を変更してメニューを画面外へ*/
+  z-index: 80;
+  background-color: #8ba79a;
+  transition: all 0.5s;/*アニメーション設定*/
+}
+
+#menu-btn-check:checked ~ .menu-content {
+  left: 75px;/*メニューを画面内へ*/
+}
+
+.instabutton-m {
+  margin-left: 80px;
+  margin-top: 80px;
+}
+
+.instabutton-m p {
+  padding-left: 10px;
+  padding-top: 4px;
+}
+
+/*ここからtopの記述*/
+
+.top {
+  color: #ffffff;
+  text-shadow: 1px 1px 10px #595656;
+  height: 100vh;
+}
+
+.top-wrapper h1 {
+  font-size: 30px;
+  letter-spacing: 10px;
+  padding-top: 480px;
+  padding-left: 60px;
+  line-height: 65px;
+  font-family: 'Klee One', cursive;
+}
+
+.top-wrapper p {
+  font-size: 12px;
+  letter-spacing: 5px;
+  padding-top: 20px;
+  padding-left: 60px;
+  line-height: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.video{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.video::after{
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: #10394b;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: .3;
+}
+
+.video video{
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.visual {
+  display: none;
+}
+
+/*ここからleadの記述*/
+
+.lead h2 {
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 1em;
+  text-decoration-thickness: 0.1px;
+  text-align: center;
+}
+
+.lead {
+  color: white;
+  padding: 80px 50px;
+  background-color: #7E7C76;
+}
+
+.lead-left {
+  padding-left: 100px;
+}
+
+.lead-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 100px;
+}
+
+.lead-left h3 {
+  padding-bottom: 28px;
+  text-shadow: 1px 1px 6px #595656;
+}
+
+.lead-left p {
+  font-size: 13px;
+  line-height: 25px;
+  padding-bottom: 30px;
+}
+
+.lead-button {
+  font-size: 15px;
+  background-color: #D9D9D9;
+  display: inline-block;
+  min-width: 125px;
+  line-height: 35px;
+  border-radius: 5px;
+  color: #656565;
+  text-align: center;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+.lead-button:hover {
+  background-color: #BEBEBE;
+  transition: 0.3s;
+}
+
+.lead-right img {
+  width: 500px;
+  height: 250px;
+  object-fit: cover;
+}
+
+/*ここからaboutusの記述*/
+
+.aboutus {
+	background: url(./../images/aboutus.jpg) left top / auto 100% no-repeat;
+  background-size: cover;
+}
+
+.aboutuswrapper {
+  padding: 200px 100px;
+}
+
+.aboutus-text {
+  line-height: 30px;
+  color: #e1e1e1;
+  text-align: center;
+
+}
+
+.aboutus h4 {
+  font-weight: lighter;
+  padding-bottom: 30px;
+  font-size: 16px;
+}
+
+.aboutus p {
+  font-size: 14px;
+  text-shadow: 1px 1px 10px #595656;
+}
+
+/*ここからmoreの記述*/
+
+.more-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 180px 100px 180px;
+  text-align: center;
+}
+
+.more h2 {
+  padding-top: 100px;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 1em;
+  text-decoration-thickness: 0.1px;
+  text-align: center;
+  color: #595656;
+}
+
+.more img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+}
+
+
+.more h1 {
+  padding: 20px 0px ;
+  font-size: 23px;
+  font-weight: bold;
+  color: #595656;
+}
+
+.more p {
+  font-size: 14px;
+  line-height: 20px;
+  color: #656565;
+}
+
+/*ここからproducts-exの記述*/
+
+.product-ex {
+  padding: 60px 60px 50px 60px ;
+  background-color: #7E7C76;
+}
+
+.product-ex-wrapper {
+  padding: 10px;
+  overflow: scroll;
+}
+
+.product-ex-wrapper li {
+  flex-shrink: 0;
+  width: 250px;
+  display: flex;
+}
+
+.product-ex-wrapper img {
+  padding-right: 10px;
+}
+
+.product-ex-wrapper::-webkit-scrollbar{
+  display: none;
+}
+
+/*ここからbtnの記述*/
+
+.btn {
+  padding: 8px 24px;
+  color: white;
+  display: inline-block;
+  opacity: 0.8;
+  border-radius: 4px;
+  display: flex;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.btn-wrapper p {
+  margin: 5px 10px 10px 15px;
+  font-size: 20px; 
+}
+
+.btn-wrapper {
+  display: flex;
+  justify-content: flex-end;
+ }
+
+/*ここからfooterの記述*/
+
+footer {
+  background-color: #595656;
+  color: #ffffff;
+  padding: 100px 110px ;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+} 
+
+.footer-logo {
+  display: flex;
+  width: 50px;
+}
+
+.footer-site-menu ul li {
+  margin-top: 50px;
+  margin-left: 50px;
+  font-size: 12px;
+  transition: all 0.3s;
+}
+
+.footer-site-menu ul li:hover {
+  cursor: pointer;
+  text-shadow: 1px 1px 3px white;
+  transition: 0.3s;
+}
+
+.footer-name-2 {
+  padding-bottom: 30px;
+  font-size: 10px;
+}
+
+.footer-name {
+  padding-top: 30px;
+  padding-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-mail {
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-tel {
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-fax {
+  font-size: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.footer-left {
+  letter-spacing: 5px;
+}
+
+.footer-site-menu {
+  border-left: dashed white;
+  border-width: 0.3px;
+  padding-left: 8px;
+}
+
+.copyright {
+  font-size: 10px;
+  margin-top: 40px;
+}
+
+.instabutton {
+  margin: 50px 0 0 0;
+}
+
+.mai {
+  margin-top: 50px;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
+.mai p {
+  margin-bottom: 10px;
+}
+@media (min-width: 800px) {
+
+  .instabutton-r {
+    display: none;
+  }
+  
+  .mai-r {
+    display: none;
+  }
+
+}
